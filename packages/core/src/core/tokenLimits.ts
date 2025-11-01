@@ -171,6 +171,9 @@ const PATTERNS: Array<[RegExp, TokenCount]> = [
   [/^gpt-oss.*$/, LIMITS['128k']],
   [/^llama-4-scout.*$/, LIMITS['10m']],
   [/^mistral-large-2.*$/, LIMITS['128k']],
+
+  // Coder model: 64K token context
+  [/^coder*$/, LIMITS['64k']],
 ];
 
 /**
