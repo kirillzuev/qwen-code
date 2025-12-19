@@ -110,7 +110,6 @@ export default {
     'open full Qwen Code documentation in your browser',
   'Configuration not available.': 'Configuration not available.',
   'change the auth method': 'change the auth method',
-  'Show quit confirmation dialog': 'Show quit confirmation dialog',
   'Copy the last result or code snippet to clipboard':
     'Copy the last result or code snippet to clipboard',
 
@@ -311,6 +310,7 @@ export default {
   'Tool Output Truncation Lines': 'Tool Output Truncation Lines',
   'Folder Trust': 'Folder Trust',
   'Vision Model Preview': 'Vision Model Preview',
+  'Tool Schema Compliance': 'Tool Schema Compliance',
   // Settings enum options
   'Auto (detect from system)': 'Auto (detect from system)',
   Text: 'Text',
@@ -636,8 +636,8 @@ export default {
   'The /directory add command is not supported in restrictive sandbox profiles. Please use --include-directories when starting the session instead.':
     'The /directory add command is not supported in restrictive sandbox profiles. Please use --include-directories when starting the session instead.',
   "Error adding '{{path}}': {{error}}": "Error adding '{{path}}': {{error}}",
-  'Successfully added GEMINI.md files from the following directories if there are:\n- {{directories}}':
-    'Successfully added GEMINI.md files from the following directories if there are:\n- {{directories}}',
+  'Successfully added QWEN.md files from the following directories if there are:\n- {{directories}}':
+    'Successfully added QWEN.md files from the following directories if there are:\n- {{directories}}',
   'Error refreshing memory: {{error}}': 'Error refreshing memory: {{error}}',
   'Successfully added directories:\n- {{directories}}':
     'Successfully added directories:\n- {{directories}}',
@@ -689,18 +689,6 @@ export default {
   'Shell Command Execution': 'Shell Command Execution',
   'A custom command wants to run the following shell commands:':
     'A custom command wants to run the following shell commands:',
-
-  // ============================================================================
-  // Dialogs - Quit Confirmation
-  // ============================================================================
-  'What would you like to do before exiting?':
-    'What would you like to do before exiting?',
-  'Quit immediately (/quit)': 'Quit immediately (/quit)',
-  'Generate summary and quit (/summary)':
-    'Generate summary and quit (/summary)',
-  'Save conversation and quit (/chat save)':
-    'Save conversation and quit (/chat save)',
-  'Cancel (stay in application)': 'Cancel (stay in application)',
 
   // ============================================================================
   // Dialogs - Pro Quota
@@ -880,6 +868,7 @@ export default {
   // Exit Screen / Stats
   // ============================================================================
   'Agent powering down. Goodbye!': 'Agent powering down. Goodbye!',
+  'To continue this session, run': 'To continue this session, run',
   'Interaction Summary': 'Interaction Summary',
   'Session ID:': 'Session ID:',
   'Tool Calls:': 'Tool Calls:',

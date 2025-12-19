@@ -36,10 +36,7 @@ import { WelcomeBackDialog } from './WelcomeBackDialog.js';
 import { ModelSwitchDialog } from './ModelSwitchDialog.js';
 import { AgentCreationWizard } from './subagents/create/AgentCreationWizard.js';
 import { AgentsManagerDialog } from './subagents/manage/AgentsManagerDialog.js';
-import {
-  QuitConfirmationDialog,
-  QuitChoice,
-} from './QuitConfirmationDialog.js';
+import { SessionPicker } from './SessionPicker.js';
 
 interface DialogManagerProps {
   addItem: UseHistoryManagerReturn['addItem'];
@@ -124,26 +121,6 @@ export const DialogManager = ({
     return (
       <LoopDetectionConfirmation
         onComplete={uiState.loopDetectionConfirmationRequest.onComplete}
-      />
-    );
-  }
-  if (uiState.quitConfirmationRequest) {
-    return (
-      <QuitConfirmationDialog
-        onSelect={(choice: QuitChoice) => {
-          if (choice === QuitChoice.CANCEL) {
-            uiState.quitConfirmationRequest?.onConfirm(false, 'cancel');
-          } else if (choice === QuitChoice.QUIT) {
-            uiState.quitConfirmationRequest?.onConfirm(true, 'quit');
-          } else if (choice === QuitChoice.SAVE_AND_QUIT) {
-            uiState.quitConfirmationRequest?.onConfirm(true, 'save_and_quit');
-          } else if (choice === QuitChoice.SUMMARY_AND_QUIT) {
-            uiState.quitConfirmationRequest?.onConfirm(
-              true,
-              'summary_and_quit',
-            );
-          }
-        }}
       />
     );
   }
@@ -310,6 +287,17 @@ export const DialogManager = ({
       <AgentsManagerDialog
         onClose={uiActions.closeAgentsManagerDialog}
         config={config}
+      />
+    );
+  }
+
+  if (uiState.isResumeDialogOpen) {
+    return (
+      <SessionPicker
+        sessionService={config.getSessionService()}
+        currentBranch={uiState.branchName}
+        onSelect={uiActions.handleResume}
+        onCancel={uiActions.closeResumeDialog}
       />
     );
   }
